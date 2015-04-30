@@ -168,7 +168,7 @@ module.exports.userman_mixins = function (objectTemplate, requires, moduleConfig
                 setEmailVerificationCode: function () {
                     this.emailValidated = false;
                     if (moduleConfig.validateEmailHumanReadable) {
-                        this.validateEmailCode = Math.floor(Math.random() * 10000);
+                        this.validateEmailCode = (Math.ceil(9999) * Math.random() * 100000).toString().split('.')[1].slice(0,4);
                         return this.persistSave();
                     } else
                         return this.getSalt().then(function (salt) {
