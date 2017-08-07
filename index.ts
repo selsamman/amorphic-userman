@@ -909,7 +909,7 @@ export abstract class AuthenticatingController extends Bindable(Remoteable(Persi
             throw {code: 'cannotcreateadmin', text: "Only a security admin can create users"};
         }
         if (adminUser.newPassword != adminUser.confirmPassword)
-            throw {code: 'passwordmismatch', text: "Password's are not the same"};
+            throw {code: 'passwordmismatch', text: "Passwords are not the same"};
 
         var principal;
 
